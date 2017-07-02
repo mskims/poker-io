@@ -21,6 +21,10 @@ socket.on('joinRoomSuccess', room => {
     console.log(room);
 });
 
+socket.on('message', message => {
+    console.info('[MESSAGE]', message);
+});
+
 $room.on('click', 'a', e => {
     const roomNumber = e.target.hash.replace('#', '');
     socket.emit('joinRoom', roomNumber);
